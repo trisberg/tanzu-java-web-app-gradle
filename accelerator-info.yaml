@@ -1,0 +1,54 @@
+id: 1c94b1f3-6b07-43b4-8572-4911530ec769
+timestamp: 2023-06-13T16:25:28Z
+username: trisberg
+source: TAP-GUI
+accelerator:
+  name: tanzu-java-web-app-native
+  git:
+    url: https://github.com/vmware-tanzu/application-accelerator-samples
+    subPath: tanzu-java-web-app
+    ref:
+      branch: add-native-workload
+    commit: a028543809c6a017efe4c455ea084c94ad6aa661
+fragments:
+  - name: build-wrapper-maven
+    git:
+      url: https://github.com/vmware-tanzu/application-accelerator-samples.git
+      subPath: fragments/build-wrapper-maven
+      ref:
+        branch: main
+        tag: tap-1.6.0
+      commit: bd63caae9826e4f2abfff5ddd333f0b3b3143115
+  - name: java-version
+    git:
+      url: https://github.com/vmware-tanzu/application-accelerator-samples.git
+      subPath: fragments/java-version
+      ref:
+        branch: main
+        tag: tap-1.6.0
+      commit: bd63caae9826e4f2abfff5ddd333f0b3b3143115
+  - name: tap-workload
+    git:
+      url: https://github.com/vmware-tanzu/application-accelerator-samples.git
+      subPath: fragments/tap-workload
+      ref:
+        branch: add-native-workload
+      commit: a028543809c6a017efe4c455ea084c94ad6aa661
+  - name: build-wrapper-gradle
+    git:
+      url: https://github.com/vmware-tanzu/application-accelerator-samples.git
+      subPath: fragments/build-wrapper-gradle
+      ref:
+        branch: main
+        tag: tap-1.6.0
+      commit: bd63caae9826e4f2abfff5ddd333f0b3b3143115
+options:
+  bsGitBranch: main
+  bsGitRepository: github.com?owner=trisberg&repo=tanzu-java-web-app-gradle
+  buildTool: gradle
+  ide: vscode
+  includeBuildToolWrapper: true
+  javaVersion: 17
+  nativeBuild: true
+  projectName: tanzu-java-web-app-gradle
+  springBootVersion: 3.0
